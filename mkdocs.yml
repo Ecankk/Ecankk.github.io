@@ -1,0 +1,28 @@
+# 站点信息
+site_name: Ecank’s blog
+site_url: https://username.github.io/repository/
+site_author: Ecank
+site_description:
+
+# 主题设置
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.tabs
+    - navigation.top
+
+# 导航设置
+nav:
+  - 首页: index.md
+  - 指南:
+      - guide/index.md
+      - 安装: guide/install.md
+      - 使用: guide/usage.md
+
+# Markdown 扩展
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
