@@ -1,28 +1,29 @@
-# 站点信息
-site_name: Ecank’s blog
-site_url: https://username.github.io/repository/
-site_author: Ecank
-site_description:
+# 站点基本信息配置
+site_name: Ecank's blog
+site_url: https://yourusername.github.io
+site_author: 你的名字
+site_description: >-
+  这是我的个人博客，记录我的学习与生活。
 
-# 主题设置
+# 主题配置
 theme:
-  name: material
-  language: zh
+  name: material # 使用Material主题
+  # 主题特性配置
   features:
-    - navigation.tabs
-    - navigation.top
+    - navigation.tabs # 顶部标签导航
+    - navigation.sections # 侧边栏分组
+    - navigation.expand # 默认展开导航
+    - navigation.top # 返回顶部按钮
 
-# 导航设置
-nav:
-  - 首页: index.md
-  - 指南:
-      - guide/index.md
-      - 安装: guide/install.md
-      - 使用: guide/usage.md
+  # 字体配置
+  font:
+    text: Roboto # 正文字体
+    code: Roboto Mono # 代码字体
 
-# Markdown 扩展
+# 扩展配置
 markdown_extensions:
-  - attr_list
-  - md_in_html
-  - toc:
-      permalink: true
+  - toc: # 目录
+      permalink: true # 永久链接
+      toc_depth: 3 # 目录深度
+  - tables # 表格支持
+  - footnotes # 脚注
