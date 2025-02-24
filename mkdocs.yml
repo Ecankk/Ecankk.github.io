@@ -1,24 +1,78 @@
 # 站点基本信息配置
-site_name: Ecank's blog
-site_url: https://yourusername.github.io
-site_author: 你的名字
+site_name: Ecank的小屋
+site_url: https://ecankk.github.io/
+site_author: Ecank
+repo_name: Ecank's blog
+repo_url: https://github.com/Ecankk/Ecankk.github.io
 site_description: >-
-  这是我的个人博客，记录我的学习与生活。
+  This is my personal blog, record my study and life.
 
 # 主题配置
 theme:
   name: material # 使用Material主题
   # 主题特性配置
-  features:
-    - navigation.tabs # 顶部标签导航
-    - navigation.sections # 侧边栏分组
-    - navigation.expand # 默认展开导航
-    - navigation.top # 返回顶部按钮
+  language: en
+  custom_dir: overrides
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: follow system
 
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: light mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: darkmode
+  icon:
+    logo: material/food
+    repo: fontawesome/brands/git-alt
+    edit: material/pencil
+
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.action.view
+    - content.footnote.tooltips
+    - content.tabs.link
+    - header.autohide
+
+    # - navigation.tabs.sticky
+    # - navigation.sections
+
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - navigation.path
+
+    # - navigation.instant.prefetch
+    # - navigation.instant.preview
+    # - navigation.instant.progress
+    # - navigation.expand
+
+    - toc.follow
+
+    - search.highlight
+    - search.share
+    - search.suggest
   # 字体配置
   font:
-    text: Roboto # 正文字体
-    code: Roboto Mono # 代码字体
+    text: JetBrains Mono
 
 # 扩展配置
 markdown_extensions:
@@ -27,3 +81,143 @@ markdown_extensions:
       toc_depth: 3 # 目录深度
   - tables # 表格支持
   - footnotes # 脚注
+
+plugins:
+  - blogging:
+      locale: en
+      # {{ blog_content }}
+      dirs:
+        - CS
+        - ML
+        - ACM
+      # {{ blog_content CS }}
+      categories:
+        - name: CS
+          dirs:
+            - CS
+        - name: ML
+          dirs:
+            - ML
+        - name: ACM
+          dirs:
+            - ACM
+        - name: Summaries
+          dirs:
+            - Summaries
+        - name: Life
+          dirs:
+            - Life/posts
+      theme:
+        name: card
+      features:
+        tags:
+          index_page: tags/
+          insert: top
+  - callouts
+  - glightbox:
+      width: 80%
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Shanghai
+      enable_creation_date: true
+      exclude:
+        - index.md
+        - academy.md
+        - links.md
+        - changelog.md
+  - minify:
+      minify_html: true
+  #- mkdocs-video:
+  #    video_muted: True
+  #    video_controls: True
+  #    mark: "video"
+  # - rss:
+  #     enabled: !ENV [CI, false]
+  #     use_material_social_cards: false
+  - search
+  - statistics:
+      words_per_minute: 200
+      
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - footnotes
+  - meta
+  - md_in_html
+  - nl2br
+  - pymdownx.arithmatex: # latex支持
+      generic: true
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+  - pymdownx.highlight: # 代码块高亮
+      anchor_linenums: true
+      auto_title: true # 显示编程语言名称
+      linenums: true # 显示行号
+      linenums_style: pymdownx-inline
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.magiclink
+  - pymdownx.saneheaders
+  - pymdownx.snippets
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tilde
+  - sane_lists
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 4
+
+extra_css:
+  # - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
+  - https://cdn.tonycrane.cc/utils/katex.min.css
+  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
+  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+  - css/custom.css
+  - css/tasklist.css
+  - css/card.css
+  - css/flink.css
+  - css/extra.css
+  - css/fold_toc.css
+  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+  - css/font.css
+
+extra_javascript:
+  - js/katex.js
+  - js/toc.js
+  - js/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.tonycrane.cc/utils/katex.min.js
+  - https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+
+  # katex
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js
+
+  # mathjax
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-chtml.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-chtml-full.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-svg-full.js
