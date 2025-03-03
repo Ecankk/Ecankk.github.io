@@ -1,14 +1,15 @@
 ---
 title: L0G2000 Python基础知识
 author: Ecank
-tags: 
+tags:
+  - LLM
 created: 2025-03-02 16:00
 updated: 
 completed?: true
 keyword_for_dataview: ""
 share: true
 category: docs/ML/InternLM
-modify: 2025-03-03 18:16
+modify: 2025-03-03 18:31
 ---
 
 # Leetcode 383
