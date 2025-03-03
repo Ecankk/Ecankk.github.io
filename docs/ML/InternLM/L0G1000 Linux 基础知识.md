@@ -2,14 +2,14 @@
 title: L0G1000 Linux 基础知识
 author: Ecank
 tags:
-  - "#LLM"
+  - LLM
 created: 2025-03-01 20:27
 updated: 
 completed?: true
 keyword_for_dataview: ""
 share: true
 category: docs/ML/InternLM
-modify: 2025-03-03 18:14
+modify: 2025-03-03 19:09
 ---
 
 # 闯关任务 
