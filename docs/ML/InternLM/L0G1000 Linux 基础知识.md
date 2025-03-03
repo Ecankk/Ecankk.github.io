@@ -9,7 +9,7 @@ completed?: true
 keyword_for_dataview: ""
 share: true
 category: docs/ML/InternLM
-modify: 2025-03-03 18:12
+modify: 2025-03-03 18:14
 ---
 
 # 闯关任务 
