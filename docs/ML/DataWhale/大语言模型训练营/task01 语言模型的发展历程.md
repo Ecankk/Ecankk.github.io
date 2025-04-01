@@ -9,7 +9,7 @@ completed?: true
 keyword_for_dataview: ""
 share: true
 category: docs/ML/DataWhale/大语言模型训练营
-modify: 2025-03-13 00:42
+modify: 2025-03-13 00:43
 ---
 
 # 大语言模型发展的意义和价值
