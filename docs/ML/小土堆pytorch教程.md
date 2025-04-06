@@ -240,9 +240,7 @@ $$\frac{\partial L}{\partial K} = \frac{\partial L}{\partial (f \star K)} \ast f
 以最大池化为例子，$3\times3$ 的池化核就是对于数据每 $3\times3$ 的数据取最大值，比如就可以把 $9\times9$ 压缩为 $3\times3$  
 ## 线性层
 给定输入向量 $\mathbf{x} \in \mathbb{R}^{d_{in}}$，权重矩阵 $W \in \mathbb{R}^{d_{out} \times d_{in}}$，偏置 $\mathbf{b} \in \mathbb{R}^{d_{out}}$：
-$$
-\mathbf{z} = W\mathbf{x} + \mathbf{b}
-$$
+$$\mathbf{z} = W\mathbf{x} + \mathbf{b}$$
 
 | 特性 | 描述 | 典型应用场景 |
 |------|------|--------------|
