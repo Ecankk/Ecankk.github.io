@@ -8,7 +8,7 @@ completed?: true
 keyword_for_dataview: ""
 share: true
 category: docs/ML
-modify: 2025-04-05 20:20
+modify: 2025-04-06 15:55
 ---
 
 # Python 的法宝函数
@@ -121,9 +121,11 @@ writer.close()
 关注函数描述的输入和输出（见官方文档），注意函数的参数
 1. `ToTensor()` 把数据类型转换成 Tensor
 2. `Normalize()` 会对输入张量的**每个通道**执行以下计算，它的核心作用是通过对每个通道的像素值进行**线性变换**，将数据调整到特定的均值和标准差范围
+   
 $$
 \text{output\_channel} = \frac{\text{input\_channel} - \text{mean}}{\text{std}}
 $$
+
 3. `Resize()` 将输入图像（PIL Image 或 Tensor）的尺寸调整为指定大小，​**强制统一所有输入图像的尺寸**，以满足深度学习模型对固定输入尺寸的要求
 4. `Compose`**的作用是将多个图像变换（`transform`）按顺序组合成一个整体**。是PyTorch中构建图像预处理流水线的核心工具，通过将多个变换按顺序组合，确保数据在输入模型前经过规范化的处理。多个变换的顺序很重要，前一个的输出作为下一个的输入。
 
@@ -152,7 +154,11 @@ $$
 
 
 输入特征图 $X \in \mathbb{R}^{H×W×C}$，卷积核 $W \in \mathbb{R}^{k×k×C×N}$：
-$$Z_{i,j,n} = \sum_{c=1}^C \sum_{u=-k}^{k} \sum_{v=-k}^{k} W_{u,v,c,n} \cdot X_{i+u,j+v,c} + b_n$$
+
+$$
+Z_{i,j,n} = \sum_{c=1}^C \sum_{u=-k}^{k} \sum_{v=-k}^{k} W_{u,v,c,n} \cdot X_{i+u,j+v,c} + b_n
+$$
+
 * 在 pytorch 中的尝试
 ```python
 import  torch
@@ -197,7 +203,11 @@ tensor([[[[ 1,  3,  4, 10,  8],
 通过反向传播自动学习滤波器参数，网络能够自适应地发现对任务最有判别力的特征组合。
 **参数学习机制**：
 虽然未执行核翻转，但通过梯度下降算法：
-$$\frac{\partial L}{\partial K} = \frac{\partial L}{\partial (f \star K)} \ast f$$
+
+$$
+\frac{\partial L}{\partial K} = \frac{\partial L}{\partial (f \star K)} \ast f
+$$
+
 网络会自动学习到与数学卷积等效的旋转滤波器参数。
 ## 通道是什么？
 通道（Channel）是深度学习中对数据特征的维度抽象，在不同领域有不同表现形式：
@@ -237,10 +247,15 @@ $$\frac{\partial L}{\partial K} = \frac{\partial L}{\partial (f \star K)} \ast f
 池化过程在一般卷积过程后。池化（pooling） 的本质，其实就是采样。Pooling 对于输入的 Feature Map，选择某种方式对其进行降维压缩，以加快运算速度。
 本质是特征提取，用来压缩或者降维。要损失一部分信息。
 * 池化层没有参数
+
 以最大池化为例子，$3\times3$ 的池化核就是对于数据每 $3\times3$ 的数据取最大值，比如就可以把 $9\times9$ 压缩为 $3\times3$  
 ## 线性层
 给定输入向量 $\mathbf{x} \in \mathbb{R}^{d_{in}}$，权重矩阵 $W \in \mathbb{R}^{d_{out} \times d_{in}}$，偏置 $\mathbf{b} \in \mathbb{R}^{d_{out}}$：
-$$\mathbf{z} = W\mathbf{x} + \mathbf{b}$$
+
+$$
+\mathbf{z} = W\mathbf{x} + \mathbf{b}
+$$
+
 
 | 特性 | 描述 | 典型应用场景 |
 |------|------|--------------|
