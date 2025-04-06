@@ -8,7 +8,7 @@ completed?: true
 keyword_for_dataview: ""
 share: true
 category: docs/ML/PaperReading
-modify: 2025-04-06 23:53
+modify: 2025-04-07 00:09
 ---
 # 论文链接
 [Distilling the Knowledge in a Neural Network](https://ar5iv.labs.arxiv.org/html/1503.02531)
@@ -80,6 +80,7 @@ $$
 $$
 \frac{\partial C}{\partial z_i} \approx \frac{1}{N T^2} (z_i - v_i)
 $$
+
 这就是高温极限蒸馏下的损失函数了
 * 当温度 T 较低时，蒸馏过程对 logits 的匹配变得不那么敏感，尤其是对那些比平均值更负的 logits。这是因为低温使得 softmax 函数的输出更加尖锐，负 logits 的影响被缩小。
 ### 为什么忽略负 logits 可能有益
