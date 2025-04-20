@@ -9,7 +9,7 @@ completed?: true
 keyword_for_dataview: 
 share: true
 category: docs/ML/CS231n
-modify: 2025-04-20 20:27
+modify: 2025-04-20 21:20
 ---
 # Lecture 1: Introduction
 简要介绍了计算机视觉的发展。
@@ -213,5 +213,5 @@ $$
     - 损失计算简单，只需比较得分差。
     - 但优化可能需要对偶形式（传统SVM）或次梯度（CS231n中的原问题形式）。
 - **Softmax**：
-    - 需要计算指数 esk e^{s_k} esk​ 和归一化，计算开销稍大。
+    - 需要计算指数和归一化，计算开销稍大。
     - 优化更直接，梯度计算平滑。
