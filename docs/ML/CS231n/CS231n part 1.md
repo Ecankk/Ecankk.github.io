@@ -9,7 +9,7 @@ completed?: true
 keyword_for_dataview: 
 share: true
 category: docs/ML/CS231n
-modify: 2025-04-20 21:20
+modify: 2025-04-21 22:30
 ---
 # Lecture 1: Introduction
 简要介绍了计算机视觉的发展。
