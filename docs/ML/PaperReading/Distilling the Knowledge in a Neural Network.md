@@ -3,12 +3,12 @@ title: Distilling the Knowledge in a Neural Network
 author: Ecank
 tags:
   - 论文阅读
-created: 
+created: 2025-04-06 19:57
 completed?: true
 keyword_for_dataview: ""
 share: true
 category: docs/ML/PaperReading
-modify: 2025-04-07 00:09
+modify: 2026-02-04 22:48
 ---
 # 论文链接
 [Distilling the Knowledge in a Neural Network](https://ar5iv.labs.arxiv.org/html/1503.02531)
