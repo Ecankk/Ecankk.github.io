@@ -4,9 +4,9 @@ author: Ecank
 tags:
   - CS231n
   - ML
-created: 
+created:
 completed?: true
-keyword_for_dataview: 
+keyword_for_dataview:
 share: true
 category: docs/ML/CS231n
 modify: 2025-04-21 22:30
